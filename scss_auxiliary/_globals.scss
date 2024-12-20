@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@import './variables';
+@import './mixins';
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: $font-family-base;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  color: $color-black;
+  font-size: 1vw;
+  background-color: $color-white;
+  font-display: swap;
+  overflow-x: hidden;
+
+  @include for-laptop {
+    font-size: 1rem;
+  }
+
+  main {
+    padding-top: 12em;
+  }
+
+  main,
+  .header {
+    padding-inline: 5vw;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .container {
+    padding-inline: 1em;
+    max-width: $container-width;
+    margin-inline: auto;
+  }
+
+  .block-right {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    gap: 10px;
+    justify-content: start;
+    text-transform: uppercase;
+    width: 70%;
+    margin-left: auto;
+    white-space: nowrap;
+
+    @include for-laptop {
+      width: 100em;
+      max-width: 100%;
+      margin-inline: auto;
+    }
+  }
+
+  section {
+    &:not(:nth-child(1)) {
+      padding-block: 7vw;
+
+      @include for-mobile {
+        padding-block: 9vw;
+
+      }
+    }
+
+    &:nth-child(1) {
+      @include for-mobile {
+        padding-top: 0em;
+      }
+    }
+  }
+
+  .text-lg {
+    font-size: 7.5em;
+    font-weight: 500;
+    line-height: 85%;
+
+    @include for-laptop {
+      font-size: 3em;
+      line-height: 70%;
+    }
+
+    @include for-mobile {
+      white-space: wrap;
+      font-size: 2.5em;
+    }
+  }
+
+  .row-text {
+    display: flex;
+    flex-direction: row;
+    column-gap: 24px;
+
+    @include for-mobile {
+      flex-direction: column;
+    }
+  }
+
+  .text-float {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 8px;
+    font-weight: 500;
+    font-size: $mini-text-size;
+    line-height: 100%;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    @include for-laptop {
+      padding-bottom: 0px;
+      font-weight: 500;
+      font-size: .8em;
+      line-height: 100%;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .title-text {
+    display: flex;
+    align-items: center;
+    font-size: 123px;
+    line-height: 85%;
+  }
+}

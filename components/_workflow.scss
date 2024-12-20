@@ -1,0 +1,85 @@
+@import '../scss_auxiliary/variables';
+@import '../scss_auxiliary/mixins';
+.workflow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__list {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);      
+        gap: 1em;
+        padding-inline: 0;
+        @include for-laptop {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include for-mobile {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid $color-black;
+        justify-content:start;
+        align-items: center;
+        padding-inline: 1.2em;
+        padding-bottom: 1.7em;
+        @include for-tablet {
+            padding-inline: 1em; 
+        }
+        .workflow__svg{
+            height: 30em;
+            @include for-tablet {
+                height: 20em;
+            }
+        }
+        @include for-mobile {
+            padding-inline: .8em; 
+        }
+    }
+    &__icon {}
+.workflow_container{
+    display: flex;
+}
+    .workflow__text {
+        gap: 0.75em;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        .workflow__title {
+            font-weight: 500;
+            font-size: 1.2em;
+            line-height: 100%;
+            letter-spacing: 1px;
+            padding-left: 1.5em;
+            text-transform: uppercase;
+            position: relative;
+            @include for-tablet {
+                font-size: 1em;
+            }
+            &::before {
+                content: attr(data-title);
+                position: absolute;
+                left: .1em;
+                top: 0em;
+                font-weight: 500;
+                font-size: .805em;
+                line-height: 100%;
+                letter-spacing: .5px;
+                text-transform: uppercase;
+                color: rgba(20, 20, 20, 0.5);
+            }
+        }
+    }
+    &__description {
+        font-weight: 400;
+        font-size: 1.125em;
+        line-height: 1.4;
+        @include for-tablet {
+            font-size: 1em;
+        }
+    }
+}

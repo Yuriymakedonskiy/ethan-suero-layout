@@ -1,0 +1,95 @@
+@import '../scss_auxiliary/variables';
+@import '../scss_auxiliary/mixins';
+.galery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: clamp(100px, 12.43vw, 333px);
+    @include for-tablet {
+     width: 100%;
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 12em;
+        @include for-tablet {
+            gap: 9em;
+            }
+    }
+    &__item {
+        &:nth-child(2) {
+            .galery__card {
+                flex-direction: row-reverse;
+                @include for-tablet {
+                    flex-direction: column;
+            }
+            .galery__card-text {
+                padding-left: 99px;
+                @include for-tablet {
+                    padding-left: 0px;
+            }
+                }
+            }
+        }
+    }
+    &__card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        @include for-tablet {
+            flex-direction: column;
+            padding: auto;
+        }
+    }
+    &__card-text {
+        width: 50%;
+        padding: 1.5em;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 11px;
+        @include for-tablet {
+            padding: 0;
+            padding-bottom: 1em;
+            width: 100%;
+        }
+    }
+    &__card-title {
+        font-weight: 500;
+        font-size: 2em;
+        line-height: 103%;
+        align-items: center;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        @include for-tablet {
+            font-size: 1.5em;
+        }
+        @include for-mobile {
+            font-size: 1.3em;
+        }
+    }
+    &__card-description {
+        max-width: 25ch;
+        margin-left: 1em;
+        font-weight: 400;
+        font-size: 1.125em;
+        line-height: 148%;
+        @include for-tablet {
+            max-width: 30ch;
+            margin-left: 0;
+            }
+        }
+        &__card-img {
+            height: auto;
+            object-fit: cover;
+            width: 50%;
+            flex-shrink: 0;
+            @include for-tablet {
+                width: 100em;
+                }
+    }
+}

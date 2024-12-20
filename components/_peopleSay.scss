@@ -1,0 +1,217 @@
+@import '../scss_auxiliary/variables';
+@import '../scss_auxiliary/mixins';
+.peopleSay {
+    padding-bottom: 7vw;
+        .row-text{
+            @include for-mobile {
+                flex-direction: column-reverse;
+              }
+            }
+            .text-float{
+                @include for-mobile {
+                    padding-bottom: 1em;
+                }
+            }
+    .peopleSay__slider {
+        margin-top: clamp(30px, 5.2vw, 100px);
+        margin-bottom: clamp(80px, 8.85vw, 170px);
+    }
+    &__header {
+        border: 2px solid #141414;
+        text-transform: uppercase;
+        font-weight: 500;
+        b {
+            padding-right: 4px;
+            display: contents;
+        }
+    }
+    .peopleSay__header-list,
+    .peopleSay__footer-list {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1.4vw;
+        padding-bottom: 1.5vw;
+    }
+    .peopleSay__header-item,
+    .peopleSay__footer-item {
+        width: 100%;
+        padding: 14px;
+        font-size: 14px;
+        line-height: 100%;
+        .peopleSay__header-text,
+        .peopleSay__footer-text {
+            width: 100%;
+            display: flex;
+        }
+    }
+    .peopleSay__header-list {
+        @include for-laptop {
+            flex-wrap: wrap;
+            padding: 0;
+        }
+        @include for-mobile {
+            grid-column-gap: 0px;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 2.5vw;
+        }
+    }
+    .peopleSay__header-item {
+        @include for-laptop {
+            width: 50%;
+            padding: 1vw 0 1vw 1vw;
+        }
+        @include for-mobile {
+            width: 100%;
+        }
+    }
+    .partners {
+        &__body {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-top: 3em;
+            @include for-laptop {
+            }
+        }
+        &__title {
+            font-weight: 500;
+            font-size:1.1em;
+            line-height: 107%;
+            display: flex;
+            text-transform: uppercase;
+            text-align: center;
+            justify-content: center;
+        }
+        &__list {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            justify-items: center;
+            @include for-laptop {
+                grid-template-columns: repeat(2, 1fr);
+                grid-column-gap: 0vw;
+                grid-row-gap: 6vw;
+            }
+            @include for-mobile {
+            }
+        }
+        &__item {
+            width: 100%;
+            @include for-laptop {
+                &:last-child {
+                    grid-column: span 2;
+                }
+            }
+        }
+        .partners__img {
+            justify-self: center;
+            height: 3em;
+            @include for-mobile {
+                width: 25vw;
+                max-width: 28vw;
+            }
+        }
+    }
+}
+.slider {
+    &__body,
+    .peopleSay__footer {
+        border: 2px solid #141414;
+        border-top: none;
+    }
+    &__body {
+        display: flex;
+        padding: 14px;
+        justify-content: space-between;
+        @include for-laptop {
+            flex-direction: column;
+        }
+    }
+    &__body-img {
+        height: auto;
+        max-width: 40%;
+        flex-shrink: 0;
+        @include for-laptop {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+    &__body-testimonial {
+        display: flex;
+        padding: 3vw;
+        padding-left: 5vw;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        @include for-laptop {
+            padding-left: 1vw;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 1.5vw;
+            left: 4vw;
+            width: 6em;
+            aspect-ratio: 1;
+            background: url('../images/sayPeople/quotes.svg') center/contain no-repeat;
+            @include for-laptop {
+                padding-left: 1vw;
+            }
+        }
+        .testimonial-text {
+            font-size: 1.4em;
+            line-height: 130%;
+            font-weight: 400;
+        }
+    }
+    .peopleSay__footer {
+        position: relative;
+        .peopleSay__footer-list {
+            display: flex;
+            height: 82px;
+            align-items: center;
+            justify-content: space-between;
+            @include for-mobile {
+                height: 3em;
+            }
+        }
+        .peopleSay__footer-item {
+            display: flex;
+            padding: 0;
+        }
+        .peopleSay__footer-prev {
+            width: 4.4em;
+            aspect-ratio: 1;
+            position: absolute;
+            left: 1.5vw;
+            top: 50%;
+            transform: translateY(-50%);
+            @include for-mobile {
+            width: 2.5em;
+        }
+        }
+        .peopleSay__footer-text {
+            display: block;
+            text-align: center;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 100%;
+        }
+        .peopleSay__footer-next {
+            width: 4.4em;
+            aspect-ratio: 1;
+            position: absolute;
+            right: 1.5vw;
+            top: 50%;
+            transform: translateY(-50%);
+            @include for-mobile {
+                width: 2.5em;
+            }
+        }
+    }
+}

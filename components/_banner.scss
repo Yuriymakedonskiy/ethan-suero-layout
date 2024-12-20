@@ -1,0 +1,123 @@
+@import '../scss_auxiliary/variables';
+@import '../scss_auxiliary/mixins';
+.banner__img-wrap {
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: clamp(100px, 23.62vw, 300px);
+    left: 0;
+    @include for-laptop {
+        right: 0;
+        left: auto;
+    }
+    .banner__img {
+        max-width: 5vw;
+    }
+}
+.banner {
+    &__body {
+        font-weight: 500;
+    }
+    &__text {
+        display: flex;
+        align-items: center;
+        font-size: 8.6em;
+        line-height: 85%;
+        @include for-laptop {
+            font-size: 5rem;
+        }
+        @include for-tablet {
+            font-size: 3rem;
+        }
+    }
+    .laptop-display{
+        display: none;
+    }
+    &__col {
+        display: flex;
+        flex-direction: row;
+        column-gap: 24px;
+    }
+    &__text-float {
+        font-size: $banner-text-size;
+        line-height: 104%;
+        letter-spacing: 1px;
+        color: $color-black;
+        align-items: center;
+        display: flex;
+        @include for-laptop {
+            margin-top: 4px;
+        }
+        @include for-tablet {
+            margin-top: 1em;
+            padding-bottom: .5em;
+            font-size: 1em;
+        }
+        &:nth-child(2) {
+            @include for-laptop {
+                display: none;
+            }
+        }
+        .laptop-display{
+            @include for-laptop {
+                display: block;
+            }
+        }
+    }
+    &__work {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        padding-block: 8em;
+        @include for-laptop {
+        }
+        &_body {
+        }
+        &_title {
+            font-size: $mini-text-size;
+            line-height: 107%;
+            text-align: center;
+            letter-spacing: 0.5px;
+            color: $color-black;
+            padding-bottom: 40px;
+        }
+        &_list {
+            column-gap: clamp(16px, 8vw, 126px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &_item {}
+        &_img {}
+    }
+    .about {
+        &__text {
+            text-transform: none;
+            font-weight: 400;
+            font-size: 3em;
+            line-height: 1.2;
+            white-space: wrap;
+            text-indent: 4em;
+            color: $color-black;
+            position: relative;
+            @include for-tablet {
+                font-size: 2em;
+            }
+        @include for-mobile {
+        font-size: 1.5em;
+        }
+            &::before {
+                content: 'ABOUT';
+                position: absolute;
+                font-weight: 500;
+                font-size: .375em;
+                line-height: 1;
+                inset: 1.2em auto auto -7em;                ;
+                text-transform: uppercase;
+                color: $color-black;
+                @include for-tablet {
+                }
+            }
+        }
+    }
+}

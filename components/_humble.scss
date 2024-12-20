@@ -1,0 +1,114 @@
+@import '../scss_auxiliary/variables';
+@import '../scss_auxiliary/mixins';
+.humble {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    .text-float{
+        @include for-mobile {
+            padding-top: 1em;
+        }
+    }
+    &__body {
+        max-width: 907px;
+        font-weight: 500;
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+    }
+    &__col {}
+    &__text-float {}
+    .awards {
+        position: relative;
+        &__list {
+            display: flex;
+            flex-direction: row;
+            width: 150vw;
+            padding-top: clamp(80px, 4vw, 90px);
+            text-align: center;
+            margin-left: -12vw;
+            overflow: hidden;
+            gap: 2em;
+            @include for-laptop {
+                gap: 1em;
+                width: 250vw;
+                padding-top: 3em;
+            }
+        }
+        &__item {
+            &:nth-child(even) {
+                padding-top: 4em;
+                @include for-laptop {
+                    padding-top: 2em;
+                }
+            }
+        }
+        &__img {
+            flex-shrink: 0;
+        }
+    }
+}
+.awards__table {
+    text-transform: uppercase;
+    padding-block: clamp(80px, 7vw, 190px);
+    @include for-laptop {
+        padding-top: 0;
+        padding-bottom: 7vw;
+    }
+    .awards__body {
+        .awards__item {
+            display: flex;
+            height: 65px;
+            border-top: 1px solid #E5E5E5;
+            margin-top: 1em;
+            padding-top: 2em;
+            @include for-mobile {
+                flex-direction: column;
+                padding: auto;
+                justify-content: center;
+                align-items: center;
+            }
+            p{
+                margin-bottom:  0.6em;
+                letter-spacing: 0px;
+            }
+        }
+        .awards__text {
+            flex: 1;
+            font-weight: 500;
+            font-size: .875em;
+            line-height: 100%;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            &:nth-child(1) {
+                flex: 3.2;
+                @include for-laptop {
+                    flex: 1.4;
+                }
+            }
+            &:nth-child(2) {
+                flex: 1.9;
+                @include for-laptop {
+                    flex: 1;
+                }
+            }
+            &:nth-child(3) {
+                flex: 1.9;
+                @include for-laptop {
+                    flex: 1;
+                }
+            }
+            &:nth-child(4) {
+                justify-content: end;
+                display: flex;
+                @include for-laptop {
+                    display: none;
+                }
+            }
+            @include for-laptop {
+                white-space: wrap;
+                font-size: .775em;
+            }
+        }
+    }
+}

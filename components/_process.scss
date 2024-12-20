@@ -1,0 +1,7 @@
+@import '../scss_auxiliary/variables';
+@import '../scss_auxiliary/mixins';
+.process {
+    &__body {
+        padding-bottom: 3em;
+    }
+}

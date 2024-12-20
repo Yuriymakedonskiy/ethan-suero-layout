@@ -1,0 +1,16 @@
+@import 
+  './scss_auxiliary/normalize',
+  './scss_auxiliary/mixins',
+  './scss_auxiliary/variables',
+  './scss_auxiliary/globals';
+
+@import 
+  './components/header', 
+  './components/banner',
+  './components/galery',
+  './components/projects',
+  './components/process',
+  './components/humble',
+  './components/workflow',
+  './components/questions',
+  './components/peopleSay';

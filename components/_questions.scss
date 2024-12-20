@@ -1,0 +1,45 @@
+@import '../scss_auxiliary/variables';
+@import '../scss_auxiliary/mixins';
+.questions {
+    text-transform: uppercase;
+    .row-text{
+        @include for-mobile {
+            flex-direction: column-reverse;
+          }
+        }
+        .text-float{
+            @include for-mobile {
+                padding-bottom: 1em;
+            }
+        }
+    &__body {}
+    &__row {}
+    &__text {}
+    &__list {
+        font-weight: 500;
+        padding-top: clamp(40px, 4.9vw, 80px);
+        display: flex;
+        flex-direction: column;
+    }
+    &__item {
+        border-top: 1px solid #E5E5E5;
+        border-bottom: 1px solid #E5E5E5;
+        cursor: pointer;
+        width: 100%;
+        font-size:.895em;
+        white-space: wrap;
+        padding: 2em 2.2em 2em .25em;
+        line-height: 1.2;
+        position: relative;
+        &::after {
+            position: absolute;
+            right: 0;
+            top: .65em;
+            content: '+';
+            font-size: 1.575em;
+            aspect-ratio: 1;
+            font-weight: 400;
+            color: #3E3E3E;
+        }
+    }
+}

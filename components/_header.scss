@@ -1,0 +1,86 @@
+@import '../scss_auxiliary/variables';
+@import '../scss_auxiliary/mixins';
+.header {
+    padding-inline: 5vw;
+    margin-inline: auto;
+    z-index: 5000;
+    backdrop-filter: blur(10px);
+    background-color: rgba(250, 250, 250, 0.35);
+    position: fixed;
+    top: 0;
+    inset: 0% 0% auto;
+    &__wrap{
+        padding: 1em;
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        font-weight: 500;
+        justify-content: space-between;
+        @include for-mobile {
+            flex-wrap: wrap; 
+            row-gap: 10px;
+            padding-inline: 0;
+            }
+    }
+    @include for-tablet {
+        flex-wrap: wrap;
+        row-gap: 20px;
+        padding-top: 10px;
+        padding-inline: 20px;
+    }
+    &__logo {
+        .header__img{
+            width: 9em;
+            height: auto;
+            flex-shrink: 0;
+        }
+    }
+    &__menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5em;
+        @include for-tablet {
+            gap: 0px;
+        }
+    }
+    &__list {
+        display: flex;
+        gap: .5em;
+        line-height: 100%;
+        align-items: center;
+        letter-spacing: 0.5px;
+    }
+    &__link.header__link-text {
+        color: $color-black;
+            font-size: 1.1em;
+        &:last-child {
+            margin-right: 1em;
+            @include for-tablet {
+                margin-right: auto;
+            }
+        }
+        @include for-mobile {
+            font-size: 0.9em;
+            }
+    }
+    &__button {
+        outline: none;
+        padding: 1em 1.5em;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        border: none;
+        font-weight: 500;
+        font-size: $nav-size;
+        line-height: 120%;
+        align-items: center;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $color-white;
+        background: $color-black;
+        border-radius: .5em;
+        @include for-tablet {
+            display: none;
+        }
+    }
+}

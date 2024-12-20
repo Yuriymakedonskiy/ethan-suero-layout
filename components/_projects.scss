@@ -1,0 +1,50 @@
+@import '../scss_auxiliary/variables';
+@import '../scss_auxiliary/mixins';
+.projects {
+    position: relative;
+    &::before {
+        content: 'more projects';
+        position: absolute;
+        top: 7vw;
+        left: -43%;
+        font-weight: 500;
+        font-size: $mini-text-size;
+        line-height: 14px;
+        /* or 100% */
+        align-items: center;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: $color-black;
+        @include for-laptop {
+            top: 0vw;
+            position: relative;
+            left: 0px;
+            padding-top: 1.25em;
+            padding-left: 2px;
+            width: 100%;
+            border-top: 1px solid $color-light-gray;
+        }
+    }
+    &__body {
+        font-weight: 500;
+    }
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+        .projects__text {
+            display: flex;
+            line-height: 85%;
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -18px;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: $color-light-gray;
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+@import './mixins';
+
+$font-family-base: "Inter", sans-serif;
+$color-black:#141414;
+$color-gray:#3E3E3E;
+$color-light-gray:#e5e5e5;
+$color-white:#FAFAFA;
+
+$container-width: 1800px;
+
+$nav-size:1.1em;
+
+$banner-title-size:7.5em;
+$banner-text-size:1.5em;
+$mini-text-size:.875em;
+
+$projects-title-size:102px;
+
+$galery-padding-inline:136.83px;
+$galery-text-size:18px;
+$galery-title-size:32px;
+$galery-image-height:260px;
+$galery-image-width:583px;
+
+$process-width:421px;
+$process-height:528px;
+$process-border:2px solid $color-black;
+$process-gap:16px;
+
+$brag-image-height:265px;
+$brag-image-width:186px;
+
+$table-th:14px;
+$table-left-th:13px;
+
+$slider-border:2px solid #000;
+$border-radius-circle: 8px;
